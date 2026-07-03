@@ -32,8 +32,7 @@ I put
 105 OR 1=1
 ```
 ```
-SELECT * FROM Users WHERE ID = 105 OR 1=1
-SELECT * FROM Users WHERE firname = Flag AND surname = GetThe
+SELECT first_name, sur_name, id FROM Users WHERE ID = 105 OR 1=1
 ```
 
 And I got all users.

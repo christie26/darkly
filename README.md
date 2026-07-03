@@ -8,3 +8,22 @@ Open your browser and go
 ```
 http://localhost:8080
 ```
+
+#### I_am_admin
+In cookie, I can find "I_am_admin" key.
+
+I_am_admin: 68934a3e9455fa72420237eb05902327
+
+This was 'false' when we converted using "MD5 hash". 
+
+So we put 'true' instead of 'false' and it gave us this flag!
+
+FLAG: df2eb4ba34ed059a1e3e89ff4dfc13445f104a1a52295214def1c4fb1693a5c3
+
+#### Recover page
+In login page,
+http://localhost:8080/index.php?page=signin&username=login&password=password&Login=Login
+
+In recover page, there is 'mail' and 'Submit'
+
+FLAG: 1d4855f7337c0c14b6f44946872c4eb33853f40b2d54393fbe94f49f1e19bbb0

@@ -25,3 +25,16 @@ In recover page, there is 'mail' and 'Submit' and value of 'mail' is set as 'web
 When we change it to anything else, they give us a flag!
 
 FLAG: 1d4855f7337c0c14b6f44946872c4eb33853f40b2d54393fbe94f49f1e19bbb0
+
+#### 02 SQL from member search
+I put
+```
+105 OR 1=1
+```
+And I got all users.
+```
+ID: 105 OR 1=1 
+First name: Flag
+Surname : GetThe
+```
+But I don't know what to do with it.

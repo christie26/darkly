@@ -96,3 +96,11 @@ Let's do it.
 2. Encode `fortytwo` with 'sh256' -> "10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5"
 
 FLAG: 10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5
+
+### Why it is vulnerable
+Of course it is because we let user to get whatever information they want from DB.
+
+### How to prevent
+We don't put user input directly into query. 
+
+Instead, we can verify input in this case, we check if input is int. Then put it in query or use framework that has query parameterization like [django](https://docs.djangoproject.com/en/6.0/topics/security/#sql-injection-protection)

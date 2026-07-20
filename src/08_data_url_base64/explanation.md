@@ -32,4 +32,19 @@ FLAG : 928d819fc19405ae09921a2b71227bd9aba106f9d2d37ac412e9e5a750f1506d
 
 ### Why it is vulnerable
 
+src parameter is vulnerable because it let the user to send any data (image name, html or javaScript...) he want, all data are decoded (Base64) and treat by the app, the user can do a XSS (Cross-Site Scripting -> injection of javascript code) attack
+
+Base64 do not protect, it's just another way to write text
+
+By a XSS attack, hacker can stole cookies, redirect to a bad website
+change website content...
+
+
 ### How to prevent
+
+First, the dev should never trust the user (logicaly)
+Parse url :
+- > only allowed real image name
+- > check if image name corresponds well to an existing image
+- > refuse url begin with data
+- > forbid caractere like < > " '

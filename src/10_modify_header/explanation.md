@@ -38,3 +38,26 @@ curl 'http://localhost:8080/index.php?page=b7e44c7a40c5f80139f0a50f3650fb2bd8d00
 I got it!
 
 FLAG : f2a29020ef3132e01dd61df97fd33ec8d7fcd1388cc9601e7db691d17d4d6188
+
+### Why it is vulnerable
+
+- The website trusts HTTP headers sent by the user (such as User-Agent and Referer) to decide if access should be allowed.
+
+- HTTP headers can be modified by attackers using tools like curl, Burp Suite, or custom scripts, so they cannot be considered reliable security information
+
+- The application uses simple header checks instead of a real authentication or authorization system.
+
+- so attackers may access protected pages or features by sending fake request information
+
+
+### How to prevent
+
+- > Do no trust user Header, never use User-Agent or Referer as a security mechanism.
+
+- > Use proper authentification, to protect pages with a real login systeme
+
+- > implement server side authorization, check user permission before allowing access to protected ressources
+
+- > security control, using role-based persmissions (admin/user)
+
+- > Monitor suspicious request, log and detect unusal access attempts or modifed headers

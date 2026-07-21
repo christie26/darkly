@@ -47,4 +47,4 @@ Parse url :
 - > only allowed real image name
 - > check if image name corresponds well to an existing image
 - > refuse url begin with data
-- > forbid caractere like < > " '
+- > forbid caractere like < > " ' (javascript content)

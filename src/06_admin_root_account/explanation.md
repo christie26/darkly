@@ -28,8 +28,11 @@ FLAG: d19b4823e0d5600ceed56d5e896ef328d7a2b9e7ac7e80f4fcdb9b10bcb3e7ff
 ### Why it is vulnerable
 
 - file robots.txt contains sensitive information, helping attackers discover hidden resources
+
 - htpsswd is accessible, so hash password are leaked
+
 - MD5 hash is an old algorithm vulnerable
+
 - Broken access control, cannot access to `http://localhost:8080/admin/` but it works with `http://127.0.0.1:8080/admin/`
 
 - > Compromised administrator credentials can lead to full administrative access.

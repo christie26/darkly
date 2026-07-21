@@ -12,7 +12,7 @@ FLAG: 46910d9ce35b385885a9f7e2b336249d622f29b267a1771fbacf52133beddba8
 
 ### Why it is vulnerable
 
-- the app validate uploaded file on;y by their filename and content-type but not with the actual content
+- the app validate uploaded file only by their filename and content-type but not with the actual content
 - so The server does not verify the real file type before accepting the upload. 
 - Attackers can upload files that should not be allowed
 

@@ -15,5 +15,7 @@ Since the server does not verify that the submitted email is expected or authori
 
 ### How to prevent
 - > Never trust values sent by the client, even if they are pre-filled or hidden in a form
+
 - > Not rely on a client-supplied email address,  instead, retrieve the correct email from the server or database
+
 - > Verify that the submitted email belongs to an existing and authorized user before processing the request

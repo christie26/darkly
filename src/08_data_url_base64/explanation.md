@@ -11,14 +11,17 @@ Let's try to understand what `src` is here.
 
 When we put random value for `src`, we can see the site broken.
 
-Here, we could find some examples of base64-encoded data url and also how to encode data in base64.
+[Here](https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Schemes/data), we could find some examples of base64-encoded data url and also how to encode data in base64.
 
-`https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Schemes/data`
+Let's encode this string
+```
+<script>alert('hi');</script>
+```
 
-```
-data:text/html,%3Cscript%3Ealert%28%27hi%27%29%3B%3C%2Fscript%3E
-data:text/html;base64,PHNjcmlwdD5hbGVydCgnaGknKTs8L3NjcmlwdD4=
-```
+With percent-encoded, `src=data:text/html,%3Cscript%3Ealert%28%27hi%27%29%3B%3C%2Fscript%3E`
+
+With base64 encoded, `src=data:text/html;base64,PHNjcmlwdD5hbGVydCgnaGknKTs8L3NjcmlwdD4=`
+
 I don't understand why when we do url encoding, it shows alert and when we do base64 encoding it shows flag.
 
 It's interesting that I tried to modify url and it shows flag until `PHNjcmlwdD5hbGVydC` and when I decode it, it's `<script>aler`

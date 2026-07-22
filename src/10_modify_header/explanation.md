@@ -1,9 +1,17 @@
 
+From `http://localhost:8080/index.php?page=b7e44c7a40c5f80139f0a50f3650fb2bd8d00b0d24667c4c2ca32c88e13b758f`, you can access to source code with ctrl+u
+
 From source code, I could find
 
 "Let's use this browser : "ft_bornToSec". It will help you a lot."
 
 "You must come from : "https://www.nsa.gov/"."
+
+We replace "user-agent" with `ft_bornToSec` and "referer" with `https://www.nsa.gov/`
+
+**User-agent** is software agent responsible for retrieving and facilitating end-user interaction with Web content. Ex) web browser, mobile browser, etc.
+
+**Referer** contains the absolute or partial address from which a resource has been requested.
 
 
 I got the idea to modify header of HTTP request.
